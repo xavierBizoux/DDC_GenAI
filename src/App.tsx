@@ -28,7 +28,7 @@ const App = () => {
         const model = genAI.getGenerativeModel({ model: 'gemini-pro', generationConfig: generation_config }) // Getting generative model
         const prompt = `${JSON.stringify(
             promptParameters
-        )} Generate an email in ${language} to ask for a 10% discount rounded to the nearest 100. Provide information about the discounted price, the model and the make.`
+        )} Generate an email in ${language} to ask for a 10% discount. Provide information about the discounted price, the model and the make.`
         try {
             const result = await model.generateContent(prompt) // Generating content based on prompt
             const response = result.response

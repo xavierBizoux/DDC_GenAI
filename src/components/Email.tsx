@@ -22,8 +22,6 @@ const Email = ({ isLoading, text, error }: EmailProps) => {
         <p
             className='text-align-left' // Align the text to the left
             style={{ whiteSpace: 'pre-wrap' }}>
-            {' '}
-            // Preserve the white spaces in the email text
             {text}
         </p>
     )
