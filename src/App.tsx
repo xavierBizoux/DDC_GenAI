@@ -36,7 +36,7 @@ const App = () => {
             setApiData(text)
             setIsLoading(false)
             setError('') // Clear any previous error
-        } catch (error: Error | unknown) {
+        } catch (error: unknown) {
             console.error(error)
             if (error instanceof Error) {
                 setError(error.message || 'An error occurred') // Set the error state to the error message
@@ -48,7 +48,7 @@ const App = () => {
     // useEffect hook to handle messages received from the window
     useEffect(() => {
         const onMessage = (event: MessageEvent) => {
-            if (event && event.data) {
+            if (event?.data) {
                 const { data, columns } = event.data
                 // Extracting prompt parameters from received data
                 const parameters = columns.map((col: Column, index: number) => ({ [col.label]: data[0][index] }))
